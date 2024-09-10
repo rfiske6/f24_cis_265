@@ -9,8 +9,10 @@ import java.util.List;
 /**
  *
  * @author fiskeremote
+ * @param <T>
  */
-public class SecondGeneric <T extends CalculatesData & List & Comparable>{
+public class SecondGeneric <T extends CalculatesData &
+        List & Comparable>{
     //exclude/include primitive types generic, multiple bounds
     T item; 
     CalculatesData[] values;
