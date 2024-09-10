@@ -12,7 +12,7 @@ import java.util.List;
  */
 public class SecondGeneric <T extends CalculatesData & List & Comparable>{
     //exclude/include primitive types generic, multiple bounds
-    T item;
+    T item; 
     CalculatesData[] values;
     
     public SecondGeneric()
