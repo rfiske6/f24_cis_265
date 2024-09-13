@@ -6,6 +6,7 @@ package f24_cis265;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Scanner;
 
 /**
  *
@@ -44,6 +45,22 @@ public class F24_cis265 {
         alpha.add(2);
         alpha.add(3);
         alpha.add(4);
+        
+        Generic_9_10<Integer> demo = new Generic_9_10();
+        demo.add(5);
+        demo.add(2354);
+        demo.add(5);
+        demo.add(10);
+        demo.add(123);
+        demo.remove((Integer)5);
+        
+        Generic_9_10<String> demo2 = new Generic_9_10();
+        demo2.add("abc");
+        demo2.add("def");
+        Scanner input = new Scanner(System.in);
+        String val = input.next();
+        demo2.remove(val);
+        
         return;
     }
     

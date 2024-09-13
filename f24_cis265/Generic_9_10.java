@@ -8,7 +8,7 @@ package f24_cis265;
  *
  * @author fiskeremote
  */
-public class Generic_9_10 <T> {
+public class Generic_9_10 <T extends Comparable> {
     /*
     create generic class
     this class will be an array list
@@ -20,14 +20,14 @@ public class Generic_9_10 <T> {
     private int count = 0;
     public Generic_9_10()
     {
-        values = (T[])new Object[4];
+        values = (T[])new Comparable[4];
     }
     
     public void add(T val)
     {
         if (count >= values.length)
         {
-            T[] tmp = (T[])new Object[count*2];
+            T[] tmp = (T[])new Comparable[count*2];
             for(int i = 0; i < values.length; i++)
             {
                 tmp[i] = values[i];
@@ -36,6 +36,27 @@ public class Generic_9_10 <T> {
         }
         
         values[count++] = val;
+    }
+    
+    public void remove(int index)
+    {
+        count--;
+        for(int i = index; i < count; i++)
+        {
+            values[i] = values[i+1];
+        }
+        values[count] = null;
+    }
+    
+    public void remove(T val)
+    {
+        for (int i = 0; i < count; i++)
+        {
+            if (val.compareTo(values[i]) == 0)
+            {
+                remove(i);
+            }
+        }
     }
     
     public T get(int index)
