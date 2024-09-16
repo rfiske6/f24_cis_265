@@ -57,12 +57,31 @@ public class F24_cis265 {
         Generic_9_10<String> demo2 = new Generic_9_10();
         demo2.add("abc");
         demo2.add("def");
-        Scanner input = new Scanner(System.in);
-        String val = input.next();
-        demo2.remove(val);
+        //Scanner input = new Scanner(System.in);
+        //String val = input.next();
+        //demo2.remove(val);
         
+        //y = 5
+        //then arr[4] = 5;
+        //when arr = 1
+        //arr[0] = 1
+        Generic_9_10<Fraction> fracs = new Generic_9_10<>();
+        fracs.add(new Fraction(6,4));
+        fracs.add(new Fraction(8,3));
+        fracs.add(new Fraction(16,14));
+        fracs.add(new Fraction(6,4));
+        fracs.add(new Fraction(4,3));
+        fracs.add(new Fraction(9,40));
+        fracs.add(new Fraction(60,40));
+        fracs.add(new Fraction(12,8));
+        
+        System.out.printf("fracs: %s\n", fracs);
+        
+        fracs.remove(new Fraction(6,4));
+        System.out.printf("fracs: %s\n", fracs);
         return;
     }
+    
     
     public static void main(String[] args) {
         // TODO code application logic here

@@ -23,6 +23,39 @@ public class Generic_9_10 <T extends Comparable> {
         values = (T[])new Comparable[4];
     }
     
+    private boolean isValidIndex(int index)
+    {
+        if (index >= 0 && index < count)
+        {
+            return(true);
+        }
+        else
+        {
+            return(false);
+        }
+    }
+    
+    public void set(int index, T val)
+    {
+        //if(!isValidIndex(index))
+        if (isValidIndex(index) == false)
+        {
+          throw new IndexOutOfBoundsException();  
+        }
+        values[index] = val;
+    }
+    
+    
+    public void add(int index, T val)
+    {
+        count++;
+        for(int i = count; i > index; i--)
+        {
+            values[i] = values[i-1];
+        }
+        values[index] = val;
+    }
+    
     public void add(T val)
     {
         if (count >= values.length)
@@ -61,10 +94,26 @@ public class Generic_9_10 <T extends Comparable> {
     
     public T get(int index)
     {
+        if (index >= count || index < 0)
+        {
+            throw new IndexOutOfBoundsException();
+        }   
         return(values[index]);
     }
     
-    //add an add method that takes a parameter T and adds it to our storage
-    //add a get method that tages an integer index and retrieves the 
-    //value at the index provided (don't worry about error checking for now
+    @Override
+    public String toString()
+    {
+        StringBuilder bld = new StringBuilder();
+        bld.append("[");
+        for (int i = 0; i < count; i++)
+        {
+            bld.append(values[i]);
+            bld.append(", ");
+        }
+        bld.setLength(bld.length()-2);
+        bld.append("]");
+        return(bld.toString());
+    }
+    
 }
