@@ -101,19 +101,7 @@ public class Generic_9_10 <T extends Comparable> {
         return(values[index]);
     }
     
-    @Override
-    public String toString()
-    {
-        StringBuilder bld = new StringBuilder();
-        bld.append("[");
-        for (int i = 0; i < count; i++)
-        {
-            bld.append(values[i]);
-            bld.append(", ");
-        }
-        bld.setLength(bld.length()-2);
-        bld.append("]");
-        return(bld.toString());
-    }
-    
+    //add an add method that takes a parameter T and adds it to our storage
+    //add a get method that tages an integer index and retrieves the 
+    //value at the index provided (don't worry about error checking for now
 }
