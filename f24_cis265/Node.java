@@ -32,9 +32,14 @@ public class Node<T> {
         this.next = next;
     }
     
-    public void setPrevious(Node<T> previous)
+    public boolean setPrevious(Node<T> previous)
     {
+        if (previous == this)
+        {
+            return(false);
+        }
         prev = previous;
+        return(true);
     }
     
     public T getData()

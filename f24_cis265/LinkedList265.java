@@ -28,4 +28,21 @@ public class LinkedList265<T> {
     that adds the provided data to the end of our
     linked list.
     */
+    public void add(T val)
+    {
+        Node<T> tmp = new Node<>(val);
+        if (head == null)
+        {
+            head = tail = tmp;
+        }
+        else
+        {
+            //I want attatch the current to the new node
+            //and move the tail marker to the new node
+            tail.setNext(tmp);
+            tmp.setPrevious(tail);
+            tail = tmp;
+            
+        }
+    }
 }
