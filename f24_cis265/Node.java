@@ -52,5 +52,13 @@ public class Node<T> {
         this.data = data;
     }
     
+    @Override
+    public String toString()
+    {
+        return(data.toString());
+    }
+    /*
+    LIFO structure: Last In First Out.
     
+    */
 }
